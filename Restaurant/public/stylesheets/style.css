@@ -1,0 +1,116 @@
+body {
+	background-color: rgb(252, 246, 218);
+}
+
+.navbar {
+	background-color: #5c1d186b !important;
+	z-index: 2;
+}
+
+.nav-link {
+	transition: 0.5s;
+}
+
+.nav-link:hover {
+	transform: scale(1.1);
+}
+.flexCenter {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.header {
+	background-image: url("/images/web/bg-home.jpg");
+	height: 100vh;
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.orange {
+	color: #f44336;
+}
+
+.btn {
+	border-radius: 10px;
+}
+
+.btn-orange {
+	background-color: #f44336;
+	padding: 12px 20px;
+	color: white;
+}
+.refImg1,
+.refImg2 {
+	height: 500px;
+	width: 45%;
+	margin: 2%;
+	background-size: cover;
+	background-position: center;
+}
+.refImg1 {
+	background-image: url("/images/web/food-img-01.jpg");
+}
+
+.refImg2 {
+	background-image: url("/images/web/food-img-02.jpg");
+}
+
+.chefs {
+	height: 40vh;
+	background-image: url("/images/web/parallax-bg-9.jpg");
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.footer {
+	background-color: #302322e0;
+	height: 20vh;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	position: relative;
+	bottom: 0;
+	width: 100%;
+}
+
+.registerForm {
+	height: 80vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	box-shadow: 0px -4px 20px 0px #0000005e;
+}
+
+.regForm {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	justify-content: space-around;
+}
+
+.bg-chefTable {
+	background-image: url("/images/web/bg-home.jpg");
+	background-position: center;
+	background-size: cover;
+}
+
+.loginbg {
+	background-image: url("/images/web/parallax-bg-9.jpg");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100vh;
+}
+
+.loginContainer {
+	height: 80vh;
+}
+
+.loginForm {
+	box-shadow: 20px 19px 20px 20px #000000a6;
+	border-radius: 15px;
+}
