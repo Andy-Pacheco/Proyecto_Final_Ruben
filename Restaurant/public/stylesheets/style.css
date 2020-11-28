@@ -2,17 +2,35 @@ body {
 	background-color: rgb(252, 246, 218);
 }
 
-.navbar {
-	background-color: #5c1d186b !important;
-	z-index: 2;
+h1,
+h2,
+h3,
+h4 {
+	font-family: "Kaushan Script";
 }
 
-.nav-link {
+.navbar {
+	background-color: #6f120b4a !important;
+	z-index: 5;
+}
+
+.filter {
+	background-color: #00000087;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	z-index: 0;
+}
+
+.nav-link,
+.a-link {
 	transition: 0.5s;
 }
 
-.nav-link:hover {
+.nav-link:hover,
+.a-link:hover {
 	transform: scale(1.1);
+	text-decoration: none;
 }
 .flexCenter {
 	display: flex;
@@ -29,8 +47,15 @@ body {
 	background-attachment: fixed;
 }
 
+h1,
+h3,
+a {
+	z-index: 1;
+}
+
 .orange {
 	color: #f44336;
+	font-family: "Merriweather";
 }
 
 .btn {
@@ -39,7 +64,6 @@ body {
 
 .btn-orange {
 	background-color: #f44336;
-	padding: 12px 20px;
 	color: white;
 }
 .refImg1,
@@ -78,24 +102,21 @@ body {
 }
 
 .registerForm {
-	height: 80vh;
+	min-height: 80vh;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	box-shadow: 0px -4px 20px 0px #0000005e;
 }
 
 .regForm {
 	display: flex;
 	flex-direction: column;
-	height: 100%;
-	justify-content: space-around;
 }
 
 .bg-chefTable {
 	background-image: url("/images/web/bg-home.jpg");
 	background-position: center;
-	background-size: cover;
+	background-size: center;
 }
 
 .loginbg {
@@ -113,4 +134,67 @@ body {
 .loginForm {
 	box-shadow: 20px 19px 20px 20px #000000a6;
 	border-radius: 15px;
+}
+
+.profile-container {
+	min-height: 80vh;
+}
+
+.chef {
+	padding: 1%;
+}
+.chef-img img {
+	height: 100%;
+	width: 100%;
+}
+
+.h200 {
+	height: 180px;
+}
+
+.chef-body {
+	min-height: 180px;
+}
+
+.dish_img img {
+	width: 100%;
+}
+
+.editImage {
+	max-height: 250px;
+}
+
+.reviews {
+	background-color: #ffc107;
+}
+
+@media (max-width: 768px) {
+	.loginForm,
+	.registerForm {
+		width: 80%;
+	}
+}
+
+@media (max-width: 575px) {
+	.header h1 {
+		font-size: 70px;
+	}
+
+	.loginForm {
+		width: 60%;
+	}
+
+	.profile-container {
+		width: 75%;
+	}
+
+	.chef-buttons {
+		flex-direction: row;
+		height: 100px;
+		padding-top: 8% !important;
+	}
+
+	.chef-responsive {
+		height: 300px;
+	}
 }

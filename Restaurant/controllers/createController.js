@@ -13,7 +13,11 @@ createController.renderForm = (req, res) =>{
 createController.instertChef = (req, res) =>{
     
     let {name, last_name, email, password, description, phone} = req.body;
+    if (description.length > 500){
+        description = description.slice(0,500);
+    };
     password = sha1(password);
+    console.log(req.file);
     let chef_img = req.file.filename;
     let sql = ` INSERT INTO chef (name, last_name, email, password, description, phone, chef_img)
     VALUES ("${name}","${last_name}","${email}","${password}","${description}","${phone}","${chef_img}");`

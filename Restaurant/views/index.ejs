@@ -6,6 +6,8 @@
     <title>Codehouse Restaurant</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="/stylesheets/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Merriweather:ital,wght@1,400;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
     
@@ -13,95 +15,52 @@
     
     <div class="container-fluid">
         <div class="row mb-5">
+            
             <div class="col-12 header flexCenter text-center">
-                <h1 class='display-1'>Welcome to the Codehouse Academy Restaurant</h1>
-                <a href="#" class="btn btn-orange">Make a reservation</a>
+                <div class="filter"></div>
+                <h1 class='display-1 text-white'>Welcome to the Codehouse Academy </br> Restaurant</h1>
+                <a href="#" class="mt-5 btn btn-orange">Make a reservation</a>
             </div>
             <div class="col-12 pt-5 text-center">
                 <h1>About us</h1>
                 <h2 class='orange'>Always responsive</h2>
             </div>
-            <div class="col-12 col-lg-6 flexCenter p-5">
+            <div class="col-12 col-xl-6 flexCenter p-5">
                 <h2>Who we are</h2>
                 <p class="p-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor molestiae voluptatibus eaque non sapiente impedit minima, corrupti reiciendis accusamus ratione inventore. Eum et, nemo quidem at saepe necessitatibus. Dolore magni facere qui nihil recusandae saepe voluptates alias natus ea nesciunt. Ratione a ducimus corrupti, suscipit nisi amet laborum necessitatibus, quaerat maxime, ipsa impedit quas. Non veritatis nostrum eos perferendis illo quisquam excepturi ex repudiandae facere repellat officiis error tempore dolorem aperiam vero adipisci, quaerat cum at illum architecto? Impedit error, ducimus labore assumenda voluptatem odio expedita fugit nemo fugiat! Repellat quisquam deleniti magnam facilis, expedita quaerat hic voluptatem animi nemo?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam corrupti nisi explicabo molestias consectetur quae excepturi facere quos consequatur eligendi.</p>
                 <a href="#" class="btn btn-orange">Book now!</a>
             </div>
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-xl-6">
                 <div class="row p-5">
                     <div class="refImg1"></div>
                     <div class="refImg2"></div>
                 </div>
             </div>
             <div class="col-12 chefs flexCenter mb-5 text-white">
+
                 <h2 class='display-4'>Meet our chefs</h2>
             </div>
 
+            <% results.forEach(function(chef){ %>
             <div class="col-12 col-md-6 col-lg-4 col-xl-3">
                 <div class="card mb-3 m-5">
                     <div class="row no-gutters">
                       <div class="col-12">
-                        <img src='/images/web/avatar-1.jpg' class="card-img" alt="...">
-                      </div>
+                        <img src='/images/users/chefs/<%= chef.chef_img %>' class="card-img" alt="...">
+                      </div>                     
                       <div class="col-12">
                         <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                          <a href="/view/2" class="btn btn-orange">View profile</a>
+                          <h5 class="card-title"><%= chef.name %></h5>
+                          <% if (chef.description.length > 100){ chef.description = chef.description.slice(0, 100) + " (...)"} %>
+                          <p class="card-text"><%= chef.description %></p>
+                          <a href="/view/<%= chef.chef_id %>" class="btn btn-orange">View profile</a>
                         </div>
                       </div>
                     </div>
                   </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                <div class="card mb-3 m-5">
-                    <div class="row no-gutters">
-                      <div class="col-12">
-                        <img src='/images/web/avatar-1.jpg' class="card-img" alt="...">
-                      </div>
-                      <div class="col-12">
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                          <a href="/view/2" class="btn btn-orange">View profile</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                <div class="card mb-3 m-5">
-                    <div class="row no-gutters">
-                      <div class="col-12">
-                        <img src='/images/web/avatar-1.jpg' class="card-img" alt="...">
-                      </div>
-                      <div class="col-12">
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                          <a href="/view/2" class="btn btn-orange">View profile</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                <div class="card mb-3 m-5">
-                    <div class="row no-gutters">
-                      <div class="col-12">
-                        <img src='/images/web/avatar-1.jpg' class="card-img" alt="...">
-                      </div>
-                      <div class="col-12">
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                          <a href="/view/2" class="btn btn-orange">View profile</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-            </div>
-
-
+            
+            <% }) %>
         </div>
     </div>
 

@@ -23,7 +23,7 @@ viewController.renderUser = (req, res) =>{
 viewController.renderEditForm = (req, res) =>{
 
     let dish_id = req.params.dish_id;
-    let sql = `SELECT name, description FROM dish WHERE dish_id = ${dish_id}`;
+    let sql = `SELECT name, description, dish_img, dish_id FROM dish WHERE dish_id = ${dish_id}`;
 
     connection.query (sql, (err, result) =>{
         if(err) throw err;
@@ -36,6 +36,9 @@ viewController.updateDish = (req, res) =>{
 
     let dish_id = req.params.dish_id;
     let {name, description} = req.body;
+    if (description.length > 300){
+        description = description.slice(0,300);
+    };
     let sql2 = `UPDATE dish SET name = "${name}", description = "${description}" 
                 WHERE dish_id = ${dish_id}`;
     let sql = `SELECT chef_id from dish WHERE dish_id = ${dish_id}`;
