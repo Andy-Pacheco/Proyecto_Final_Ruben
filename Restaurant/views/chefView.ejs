@@ -40,11 +40,15 @@
             </div>
         </div>
         <% results2.forEach(function(dish){ %>
+        <% let count = 0; %>
+        <% for (rating of ratings){ %>
+            <% if (dish.dish_id == rating.dish_id){ %>
+                <% count = rating.count;};}; %>
         <div class="row pt-2">
             <div class="col-6 col-sm-4 col-lg-2 order-2 order-sm-1 order-lg-1 p-0">
                 <div class="reviews h200 m-1 flexCenter text-center">
-                    <a href="" class="text-dark a-link">
-                        <p class="display-4 m-0">0</p class="display-4">
+                    <a href='/ratings/<%= dish.dish_id %>#reviews' class="text-dark a-link">
+                        <p class="display-4 m-0"><%= count %></p class="display-4">
                         <p>reviews</p>
                     </a>
                 </div>
@@ -74,7 +78,7 @@
             </div>
             <div class="col-6 col-sm-4 col-lg-2 order-3 order-sm-3 order-lg-5 p-0">
                 <div class="reviewslink h200 m-1 flexCenter btn-orange">
-                    <a href="#" class='text-white text-center a-link'>
+                    <a href="/ratings/<%= dish.dish_id %>" class='text-white text-center a-link'>
                     <img src="/images/web/rating.png" alt="">
                     <p>Recomend</p>
                     </a>

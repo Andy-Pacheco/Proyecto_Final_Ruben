@@ -40,9 +40,13 @@
                 <div class="col-12 mb-3">
                     <textarea class="form-control" cols="30" rows="5" name="description"><%= result[0].description %></textarea>
                 </div>
+                <div class="col-12 col-md-6  mb-3">
+                    <input type="password" class="form-control" placeholder="Enter password to save changes" name="password">
+                </div>
                 <div class="col-12">
-                    <div class="button">
-                        <button type="submit" class="btn btn-orange">Submit</button>
+                    <div class="button d-flex align-items-center">
+                        <button type="submit" class="btn btn-orange mr-5">Login</button>
+                        <p class="m-0 orange font-italic"><%= alert %></p>
                     </div>
                 </div>
             </div>

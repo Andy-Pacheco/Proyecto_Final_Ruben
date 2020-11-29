@@ -16,6 +16,8 @@ var viewRouter = require('./routes/view');
 var loginRouter = require('./routes/login');
 var foodRouter = require('./routes/food');
 var chefRouter = require('./routes/createChef');
+var ratingsRouter = require('./routes/ratings');
+
 
 
 var app = express();
@@ -35,6 +37,8 @@ app.use('/view', viewRouter);
 app.use('/login', loginRouter);
 app.use('/food', foodRouter);
 app.use('/createChef', chefRouter);
+app.use('/ratings', ratingsRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
