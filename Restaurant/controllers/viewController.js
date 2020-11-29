@@ -72,4 +72,47 @@ viewController.deleteDish = (req, res) =>{
     });
 };
 
+//view/deleteChef/:chef_id, elimina el chef y redirige a /
+viewController.deleteChef = (req, res) =>{
+
+    let chef_id = req.params.chef_id;
+    console.log(chef_id)
+    let sql = `DELETE FROM chef WHERE chef_id = ${chef_id}`;
+
+    connection.query(sql, (err, result) =>{
+        if (err) throw err;
+        console.log(result);
+        res.redirect('/');
+    });
+};
+
+//view/editChef/:chef_id, form y relleno datos, redirige a /view/:chef_id
+viewController.showChefForm = (req, res) =>{
+
+    let chef_id = req.params.chef_id;
+    let sql = `SELECT * FROM chef WHERE chef_id = ${chef_id}`;
+
+    connection.query(sql, (err, result) =>{
+        if (err) throw err;
+        res.render('editChefForm', {result});
+    })
+};
+
+//view/editChef/send/:chef_id, recoge el posteo y updatea, redirige a /view/:chef_id
+viewController.editChef = (req, res) =>{
+    let chef_id = req.params.chef_id;
+    let {name, last_name, email, phone, description} = req.body;
+    let sql = `UPDATE chef SET name = "${name}",
+                                last_name = "${last_name}",
+                                email = "${email}",
+                                phone = "${phone}",
+                                description = "${description}"
+                WHERE chef_id = ${chef_id}`;
+
+    connection.query(sql, (err, result) =>{
+        if (err) throw err;
+        res.redirect(`/view/${chef_id}`);
+    })
+};
+
 module.exports = viewController;
