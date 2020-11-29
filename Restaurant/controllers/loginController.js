@@ -7,7 +7,8 @@ let secret = "godzilla011!@";
 
 // login/, renderizar el form login.ejs
 loginController.renderLogin = (req, res) =>{
-    res.render('loginForm');
+    let alert = "";
+    res.render('loginForm', {alert});
 };
 
 // login/token, recoger el posteo de 'login.ejs', crear token y devolverlo en json
@@ -23,7 +24,8 @@ loginController.createToken = (req, res) =>{
             res.json(token);
         }
         else{
-            res.send("El correo o contraseña son incorrectos");
+            let alert = 'Email or password are not correct'
+            res.render('loginForm', {alert})
         }
     });
 };
