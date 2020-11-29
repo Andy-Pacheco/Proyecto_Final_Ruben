@@ -167,6 +167,31 @@ a {
 .reviews {
 	background-color: #ffc107;
 }
+.h30 {
+	height: 30vh;
+}
+
+.reviewName {
+	width: fit-content;
+	padding: 2%;
+	border-radius: 5px;
+	position: relative;
+	top: 35px;
+	left: 14px;
+	z-index: 2;
+}
+
+.userComment {
+	width: 80%;
+	position: relative;
+	left: 98px;
+	top: 8px;
+	z-index: 0;
+}
+
+.checked {
+	color: orange;
+}
 
 @media (max-width: 768px) {
 	.loginForm,
