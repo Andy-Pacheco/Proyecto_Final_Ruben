@@ -10,7 +10,6 @@ indexController.renderIndex = (req, res) =>{
 
     connection.query (sql, (err, results) =>{
         if(err) throw err;
-        console.log(results)
         res.render('index', {results});
     });
 };
