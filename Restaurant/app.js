@@ -17,6 +17,7 @@ var loginRouter = require('./routes/login');
 var foodRouter = require('./routes/food');
 var chefRouter = require('./routes/createChef');
 var ratingsRouter = require('./routes/ratings');
+var bookinRouter = require('./routes/booking');
 
 
 
@@ -38,6 +39,7 @@ app.use('/login', loginRouter);
 app.use('/food', foodRouter);
 app.use('/createChef', chefRouter);
 app.use('/ratings', ratingsRouter);
+app.use('/booking', bookinRouter);
 
 
 // catch 404 and forward to error handler

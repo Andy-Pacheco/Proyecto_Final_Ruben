@@ -124,7 +124,7 @@ a {
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
-	height: 100vh;
+	min-height: 80vh;
 }
 
 .loginContainer {
@@ -136,7 +136,8 @@ a {
 	border-radius: 15px;
 }
 
-.profile-container {
+.profile-container,
+.calendar {
 	min-height: 80vh;
 }
 
