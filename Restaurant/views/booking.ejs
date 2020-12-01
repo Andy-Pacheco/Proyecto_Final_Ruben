@@ -80,9 +80,10 @@
                 <div class="col-12 col-md-5"></div>
                 <div class="col-12 col-md-7 mt-3">
                     <form action="/booking/send" method="post" class="d-flex flex-column">
-                        <input type="text" name="day" id="daySend" class="border-0 text-muted mb-3" value="Day:" readonly>
-                        <input type="text" name="time" id="timeSend" class="border-0 text-muted mb-3" value="Time:" readonly>
-                        <input type="text" name="email" id="emailSend" class="border-0 text-muted mb-3" value="Email:" readonly>
+                        <h5 class="text-muted">Your reservation:</h5>
+                        <input type="text" name="day" id="daySend" class="border-0 text-muted mb-3" required onkeypress="return false;">
+                        <input type="text" name="time" id="timeSend" class="border-0 text-muted mb-3" required onkeypress="return false;">
+                        <input type="text" name="email" id="emailSend" class="border-0 text-muted mb-3" required onkeypress="return false;">
                         <div class="button">
                             <button type="submit" class="btn btn-orange">Confirm</button>
                         </div>
