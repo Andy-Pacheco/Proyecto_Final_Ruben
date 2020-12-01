@@ -194,10 +194,52 @@ a {
 	color: orange;
 }
 
+@media (max-width: 991px) and (min-width: 769px) {
+	.chef-responsive {
+		height: 600px;
+		width: 610px;
+		margin-top: 0;
+		padding-top: 0;
+	}
+
+	.chef-buttons {
+		margin: 0 30% 0 0 !important;
+		width: 100px;
+		height: 596px;
+		position: relative;
+		left: 255px;
+	}
+}
+
 @media (max-width: 768px) {
 	.loginForm,
 	.registerForm {
 		width: 80%;
+	}
+
+	.chef-responsive {
+		height: 100%;
+	}
+
+	.chef-buttons {
+		height: 98%;
+	}
+
+	.dish {
+		height: 100%;
+	}
+
+	.dish-buttons {
+		height: 100%;
+		padding-top: 5%;
+	}
+
+	.dish-buttons img {
+		transform: scale(0.75);
+	}
+
+	.col {
+		padding-right: 0;
 	}
 }
 
@@ -221,6 +263,21 @@ a {
 	}
 
 	.chef-responsive {
+		height: 500px;
+		padding: 0 5%;
+	}
+
+	.dish_img img {
 		height: 300px;
+	}
+
+	.row-img {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.refImg1,
+	.refImg2 {
+		width: 100%;
 	}
 }

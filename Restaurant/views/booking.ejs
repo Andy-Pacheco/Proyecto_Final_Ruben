@@ -26,7 +26,7 @@
                     <h4><%= month %></h4>
                     <p><%= year %></p>
                 </div>
-                <div class="col-12 d-flex justify-content-around">
+                <div class="col-12 d-flex justify-content-around bg-light">
                     <% for (weekDay of weekDays){%>
                         <div class="weekDay">
                             <h5 class="text-bold p-3"><%= weekDay %></h5>
@@ -34,20 +34,20 @@
                     <% }%>
                 </div>
                 <% let currentDay = 1; for (let week = 0; week < 6 && currentDay <= lastDay; week++){ %>
-                    <div class="col-12 d-flex justify-content-around">
+                    <div class="col-12 d-flex justify-content-around bg-light">
                     <% for (let day = 0; day < 7; day++){ %>
-                        <% if (week == 0 && day < new Date(year, date.getMonth(), 1).getDay() || currentDay > lastDay){ %>
-                            <div class="weekDay">
+                        <% if (week == 0 && day < new Date(year, date.getMonth(), 1).getDay() || currentDay > lastDay ){ %>
+                            <div class="weekDay col text-center">
                                 <button type="button" class="btn btn-outline-secondary text-white border-0 p-2" disabled><%= currentDay %></button>
                             </div>
                         <% }else{ %>
-                            <% if (currentDay < date.getDate()) { %>
-                                <div class="weekDay">
+                            <% if (currentDay < date.getDate() || day == 1) { %>
+                                <div class="weekDay col text-center">
                                     <button type="button" class="btn btn-outline-secondary border-0 text-bold p-2" disabled><%= currentDay %></button>
                                 </div>
                             <% } else{ %>
-                                <div class="weekDay">
-                                    <button value="<%= currentDay %>" id="day" type="button" class="btn btn-outline-secondary border-0 text-bold p-2" onclick="writeDay()"><%= currentDay %></button>
+                                <div class="weekDay col text-center">
+                                    <button value="<%= currentDay %>" id="day" type="button" class="btn btn-outline-secondary border-0 text-bold p-2" onclick="writeDay(this.value)"><%= currentDay %></button>
                                 </div>
                             <% }; currentDay++; %>
                         <% }; %>
@@ -98,10 +98,10 @@
         let email = document.getElementById('email').value;
         document.getElementById('emailSend').value = "Email: " + email;
     };
-    function writeDay(){
-        let day = document.getElementById('day').value;
+    function writeDay(value){
+        let day = value;
         let date = new Date;
-        let month = date.getMonth();
+        let month = date.getMonth() + 1;
         let year = date.getFullYear();
         document.getElementById('daySend').value = "Day: " + day + "/" + month + "/" + year;
     };
